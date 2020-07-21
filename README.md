@@ -1,4 +1,4 @@
-# marvel_nextjs
+# Joke - React & NextJS
 Project for studies
 
 # References
