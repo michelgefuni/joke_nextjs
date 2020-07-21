@@ -4,7 +4,7 @@ import 'isomorphic-fetch';
 const headers = new Headers();
 
 headers.append('x-rapidapi-host', 'jokeapi-v2.p.rapidapi.com');
-headers.append('x-rapidapi-key', '9249af1e56mshfbd3f87269e1899p167d7fjsnc3c9dde60d52');
+headers.append('x-rapidapi-key', process.env.REACT_APP_API_KEY || '');
 
 const fetchInit = {
   method: 'GET',
