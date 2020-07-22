@@ -11,6 +11,16 @@ const fetchInit = {
   headers: headers,
 };
 
+export const getStaticProps = async () => {
+  const response = await fetch('https://jokeapi-v2.p.rapidapi.com/joke/Any?format=json&blacklistFlags=nsfw,racist&idRange=0-150', fetchInit);
+  const joke = await response.json();
+  return {
+    props: {
+      joke
+    }
+  }
+}
+
 const Home = ({ joke }: any) => {
   if (!joke.id) {
     return <h1>Oops! Something gets wrong!</h1>;
@@ -21,13 +31,6 @@ const Home = ({ joke }: any) => {
     <h1>{joke.joke || joke.setup}</h1>
     {!!joke.delivery && <h2>{joke.delivery}</h2>}
   </>
-
-}
-
-Home.getInitialProps = async () => {
-  const response = await fetch('https://jokeapi-v2.p.rapidapi.com/joke/Any?format=json&blacklistFlags=nsfw,racist&idRange=0-150', fetchInit);
-  const joke = await response.json();
-  return { joke }
 }
 
 export default Home;
