@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next",
-    "build": "next build && next export",
+    "build": "next build && vercel",
     "start": "next start"
   },
   "dependencies": {
@@ -17,6 +17,7 @@
     "next": "^9.4.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "vercel": "^19.2.0"
   }
 }
